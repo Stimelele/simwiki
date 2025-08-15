@@ -49,7 +49,7 @@
   }
   .intro-text {
     max-width: 700px;
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
     font-size: 1.1rem;
     color: #666;
     background: #fff0f6;
@@ -109,11 +109,45 @@
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(255, 94, 163, 0.6);
     transition: background 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   .join-button:hover {
     background: #e94c8b;
     box-shadow: 0 12px 30px rgba(233, 76, 139, 0.8);
+  }
+
+  /* Administracja */
+  .admin-list {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .admin-list li {
+    background: #fff0f6;
+    border: 2px solid #ff5ea3;
+    border-radius: 14px;
+    padding: 15px 25px;
+    box-shadow: 0 6px 20px rgba(255, 94, 163, 0.3);
+    width: 220px;
+    color: #b33a72;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+  }
+  .admin-list li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(255, 94, 163, 0.5);
+  }
+  .admin-list li strong {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ff5ea3;
+    margin-bottom: 6px;
   }
 
   /* Animacje */
@@ -137,6 +171,10 @@
 A place to explore simulation games, collaborate on wikis, and join a friendly community
 </div>
 
+<a href="https://discord.gg/nKvw8Y8HpP" target="_blank" rel="noopener noreferrer" class="join-button">
+  Join to Server
+</a>
+
 <div class="section-title">What You'll Find</div>
 
 <div class="cards">
@@ -158,10 +196,15 @@ A place to explore simulation games, collaborate on wikis, and join a friendly c
   </div>
 </div>
 
-<a href="https://discord.gg/nKvw8Y8HpP" target="_blank" rel="noopener noreferrer" class="join-button">
-  Join to Server
-</a>
+<div class="section-title">Administration Team</div>
+<ul class="admin-list">
+  <li><strong>Alice</strong> Server Owner & Lead Admin</li>
+  <li><strong>Bob</strong> Moderator & Event Organizer</li>
+  <li><strong>Carol</strong> Wiki Manager</li>
+  <li><strong>Dave</strong> Community Support</li>
+</ul>
 
 </body>
 </html>
+
 
