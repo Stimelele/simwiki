@@ -2,220 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulation Wiki - Discord Server</title>
-  <link rel="icon" href="simwiki.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIMULATION WIKI</title>
   <style>
-    :root {
-      --accent: #ff5ca2;
-      --text: #333;
-      --dark: #111;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f5f5;
-      color: var(--text);
+      font-family: 'Roboto', sans-serif;
+      background: #fff;
+      color: #333;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-
     header {
-      position: relative;
-      height: 100vh;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(255,255,255,0.95)), url("simwiki2.png") center/cover no-repeat;
+      padding: 30px 20px 10px;
+      background: #fce4ec; /* very light pink */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+    }
+    header .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 20px #ff5ca2aa;
+      animation: pulse 3s infinite alternate ease-in-out;
+      flex-shrink: 0;
+    }
+    header .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #ff5ca2;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px #ff5ca2aa;
+    }
+    main {
+      flex: 1;
+      max-width: 720px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+    }
+    main p.description {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #444;
+      white-space: pre-line;
+      margin-bottom: 50px;
+    }
+    section.features {
+      background: #fff0f6;
+      border: 2px solid #ff5ca2;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 0 40px #ff5ca266;
+      max-width: 720px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 25px;
+      color: #ff5ca2;
+    }
+    section.features .feature {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 12px #ff5ca233;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
+      transition: transform 0.3s ease;
     }
-
-    /* ========== LOGO STYLE ========== */
-    .logo-card {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 10px 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      display: inline-block;
-      animation: fadeInDown 1.2s ease;
-      border: 2px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .logo-card img {
-      width: 200px;
-      height: auto;
-      display: block;
-    }
-
-    h1 {
-      font-size: 3.5em;
-      margin-top: 30px;
-      color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.6);
-      animation: fadeIn 2s ease;
-    }
-
-    .dark-subtitle {
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      display: inline-block;
-      padding: 15px 25px;
-      margin-top: 15px;
-      border-radius: 12px;
-      font-size: 1.2em;
-      max-width: 90%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      animation: fadeIn 2.3s ease;
-    }
-
-    .discord-button {
-      margin-top: 25px;
-      display: inline-block;
-      background-color: var(--accent);
-      color: white;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1em;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      animation: fadeIn 2.5s ease;
-    }
-
-    .discord-button:hover {
-      background-color: #e74d91;
-      transform: scale(1.05);
-    }
-
-    /* ========== SECTION ========== */
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.4em;
-      margin-bottom: 40px;
-      color: var(--accent);
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .feature-box {
-      background-color: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-      flex: 1 1 250px;
-      max-width: 300px;
-      transition: all 0.3s ease;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .feature-box:hover {
+    section.features .feature:hover {
       transform: translateY(-10px);
-      box-shadow: 0 16px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px #ff5ca377;
     }
-
-    .feature-box h3 {
-      color: var(--accent);
-      margin-bottom: 10px;
+    section.features .feature svg {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 12px;
+      stroke: #ff5ca2;
+      stroke-width: 1.5;
+      fill: none;
     }
-
-    .feature-box p {
-      font-size: 0.95em;
-      color: #444;
+    section.features .feature h3 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #e91e63;
+      text-shadow: 0 0 6px #ff5ca2aa;
     }
-
     footer {
       text-align: center;
-      padding: 30px 20px;
-      background-color: #fafafa;
-      font-size: 0.9em;
-      color: #777;
-      border-top: 1px solid #eee;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #f5f5f5;
+      user-select: none;
     }
-
-    /* ========== ANIMATIONS ========== */
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.4em;
-      }
-
-      .feature-box {
-        max-width: 100%;
-      }
-
-      .logo-card img {
-        width: 160px;
-      }
+    /* Animations */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px #ff5ca2aa; }
+      100% { box-shadow: 0 0 40px #ff5ca2ff; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo-card">
-      <img src="simwiki.png" alt="Simulation Wiki Logo">
+    <div class="logo">
+      <img src="simwiki.png" alt="SIMULATION WIKI logo" />
     </div>
-    <h1>Simulation Wiki</h1>
-    <p class="dark-subtitle">A place to explore simulation games, collaborate on wikis, and join a friendly community.</p>
-    <a href="https://discord.gg/YOUR_INVITE_LINK" class="discord-button" target="_blank">Join Our Discord</a>
+    <h1>SIMULATION WIKI</h1>
   </header>
+  <main>
+    <p class="description">
+Welcome to Simulator Universe!  
+Step into the ultimate hub for school-life and yandere-themed games!  
+Our community is all about:  
+💠 Yandere Simulator  
+💠 Yandere School  
+💠 Sakura School Simulator  
+💠 Saori Sato Supervisor  
+💠 High School Simulator  
+💠 School Out Simulator  
+💠 Jkwatch  
+💠 Game Asset Store Creations  
 
-  <section>
-    <h2>What You'll Find</h2>
-    <div class="features">
-      <div class="feature-box">
-        <h3>📚 Game Wikis</h3>
-        <p>Explore comprehensive guides and modding information for simulation games.</p>
-      </div>
-      <div class="feature-box">
-        <h3>👥 Community Support</h3>
-        <p>Get help and meet fellow fans of the simulation genre in a positive space.</p>
-      </div>
-      <div class="feature-box">
-        <h3>🛠️ Mod Help</h3>
-        <p>Need help with mods? We’ve got channels for troubleshooting and showcasing.</p>
-      </div>
-      <div class="feature-box">
-        <h3>🎮 Events & Play</h3>
-        <p>Join community-run events, multiplayer sessions, and simulation challenges.</p>
-      </div>
+Here you can:  
+✨ Chat with other fans & gamers  
+✨ Share fan art, mods, and game screenshots  
+✨ Join events, roleplays, and game nights  
+✨ Discover hidden tips & tricks  
+✨ Cute WIKI guild tag  
+
+Whether you’re here to discuss gameplay, share creations, or just vibe with fellow fans, this is your place!  
+
+🔗 Join us and let’s bring these worlds to life together!  
+
+Keywords: yandere, yandere simulator, yandere school, sakura school simulator, saori sato, school out simulator, high school simulator, jkwatch, simulator games, anime games, game asset store, roleplay, school simulator, anime simulator, gaming community
+    </p>
+  </main>
+  <section class="features" aria-label="What you'll find">
+    <div class="feature" title="Chat with other fans & gamers">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <h3>Chat with other fans & gamers</h3>
+    </div>
+    <div class="feature" title="Share fan art, mods, and game screenshots">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a7 7 0 0 0-14.8 0"/></svg>
+      <h3>Share fan art, mods, and game screenshots</h3>
+    </div>
+    <div class="feature" title="Join events, roleplays, and game nights">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
+      <h3>Join events, roleplays, and game nights</h3>
+    </div>
+    <div class="feature" title="Discover hidden tips & tricks">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10h-3"/></svg>
+      <h3>Discover hidden tips & tricks</h3>
+    </div>
+    <div class="feature" title="Cute WIKI guild tag">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/></svg>
+      <h3>Cute WIKI guild tag</h3>
     </div>
   </section>
-
   <footer>
-    &copy; 2025 Simulation Wiki Discord. Built with ❤️ by the community.
+    &copy; 2025 SIMULATION WIKI. All rights reserved.
   </footer>
-
 </body>
 </html>
+
+
 
