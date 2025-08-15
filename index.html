@@ -8,76 +8,82 @@
   <style>
     :root {
       --accent: #ff5ca2;
-      --background: #fdfdfd;
       --text: #333;
-      --card-bg: #fff;
+      --dark: #111;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--background);
+      background-color: #f5f5f5;
       color: var(--text);
-      animation: fadeIn 1.2s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
+    /* === HEADER === */
     header {
-      background: url("simwiki2.png") no-repeat center center/cover;
-      padding: 100px 20px 60px;
-      text-align: center;
       position: relative;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(255,255,255,0.9)), url("simwiki2.png") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
     }
 
-    .logo-badge {
-      width: 100px;
-      height: 100px;
+    .logo-wrapper {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
       border-radius: 50%;
-      background-color: white;
-      padding: 10px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      animation: float 4s ease-in-out infinite;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      animation: fadeInUp 1.5s ease;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-      100% { transform: translateY(0); }
+    .logo-wrapper img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
     }
 
     h1 {
-      font-size: 3.2em;
-      margin: 0;
+      font-size: 3.5em;
+      margin-top: 20px;
       color: white;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
+      animation: fadeIn 2s ease;
     }
 
-    p.subtitle {
-      font-size: 1.3em;
+    .dark-subtitle {
+      background: rgba(0, 0, 0, 0.7);
       color: white;
-      margin-top: 10px;
-      text-shadow: 0 0 5px rgba(0,0,0,0.3);
+      display: inline-block;
+      padding: 15px 25px;
+      margin-top: 15px;
+      border-radius: 12px;
+      font-size: 1.2em;
+      max-width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: fadeIn 2.3s ease;
     }
 
     .discord-button {
+      margin-top: 25px;
+      display: inline-block;
       background-color: var(--accent);
       color: white;
-      padding: 15px 30px;
+      padding: 14px 30px;
       border: none;
       border-radius: 30px;
       font-size: 1em;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 25px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 4px 10px rgba(255, 92, 162, 0.3);
+      transition: all 0.3s ease;
+      animation: fadeIn 2.5s ease;
     }
 
     .discord-button:hover {
@@ -85,6 +91,7 @@
       transform: scale(1.05);
     }
 
+    /* === SECTION === */
     section {
       max-width: 1000px;
       margin: 0 auto;
@@ -93,7 +100,7 @@
 
     h2 {
       text-align: center;
-      font-size: 2.2em;
+      font-size: 2.4em;
       margin-bottom: 40px;
       color: var(--accent);
     }
@@ -106,19 +113,19 @@
     }
 
     .feature-box {
-      background-color: var(--card-bg);
+      background-color: white;
       padding: 25px;
       border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
       flex: 1 1 250px;
       max-width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeIn 1s ease forwards;
+      transition: all 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
     }
 
     .feature-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+      transform: translateY(-10px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.1);
     }
 
     .feature-box h3 {
@@ -128,6 +135,7 @@
 
     .feature-box p {
       font-size: 0.95em;
+      color: #444;
     }
 
     footer {
@@ -139,16 +147,30 @@
       border-top: 1px solid #eee;
     }
 
-    /* Responsive */
+    /* === ANIMATIONS === */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === RESPONSIVE === */
     @media (max-width: 768px) {
-      .features {
-        flex-direction: column;
-        align-items: center;
+      h1 {
+        font-size: 2.5em;
       }
 
-      .logo-badge {
-        position: static;
-        margin-bottom: 20px;
+      .feature-box {
+        max-width: 100%;
+      }
+
+      .logo-wrapper img {
+        width: 100px;
+        height: 100px;
       }
     }
   </style>
@@ -156,10 +178,12 @@
 <body>
 
   <header>
-    <img src="simwiki.png" alt="Simulation Wiki Logo" class="logo-badge">
+    <div class="logo-wrapper">
+      <img src="simwiki.png" alt="Simulation Wiki Logo">
+    </div>
     <h1>Simulation Wiki</h1>
-    <p class="subtitle">Explore. Learn. Collaborate. Join our simulation community.</p>
-    <a href="https://discord.gg/YOUR_INVITE_LINK" class="discord-button" target="_blank">Join Discord</a>
+    <p class="dark-subtitle">A place to explore simulation games, collaborate on wikis, and join a friendly community.</p>
+    <a href="https://discord.gg/YOUR_INVITE_LINK" class="discord-button" target="_blank">Join Our Discord</a>
   </header>
 
   <section>
@@ -167,27 +191,26 @@
     <div class="features">
       <div class="feature-box">
         <h3>📚 Game Wikis</h3>
-        <p>Access detailed guides and wikis for simulation games and mods curated by the community.</p>
+        <p>Explore comprehensive guides and modding information for simulation games.</p>
       </div>
       <div class="feature-box">
-        <h3>👥 Friendly Community</h3>
-        <p>Connect with sim lovers, content creators, and helpful experts in our chill environment.</p>
+        <h3>👥 Community Support</h3>
+        <p>Get help and meet fellow fans of the simulation genre in a positive space.</p>
       </div>
       <div class="feature-box">
-        <h3>🛠️ Modding Help</h3>
-        <p>Having issues with mods? We provide support and share the best tools and setups.</p>
+        <h3>🛠️ Mod Help</h3>
+        <p>Need help with mods? We’ve got channels for troubleshooting and showcasing.</p>
       </div>
       <div class="feature-box">
-        <h3>🎮 Multiplayer Events</h3>
-        <p>Participate in scheduled co-op sessions and fun competitions organized by members.</p>
+        <h3>🎮 Events & Play</h3>
+        <p>Join community-run events, multiplayer sessions, and simulation challenges.</p>
       </div>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 Simulation Wiki Discord. Made with 💖 by the community.
+    &copy; 2025 Simulation Wiki Discord. Built with ❤️ by the community.
   </footer>
 
 </body>
 </html>
-
