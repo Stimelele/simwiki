@@ -1,210 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SIMULATION WIKI</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-  body {
-    margin: 0; 
-    font-family: 'Roboto', sans-serif;
-    background: #fff;
-    color: #333;
-    text-align: center;
-  }
-  header {
-    background: url('simwiki2.png') no-repeat center/cover;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0 0 40px rgba(255,94,163,0.5);
-    margin-bottom: 40px;
-  }
-  .logo-box {
-    background: #fff;
-    padding: 10px;
-    border-radius: 16px;
-    border: 2px solid #ff5ea3; /* cienka różowa ramka */
-    box-shadow: 0 6px 15px rgba(255, 94, 163, 0.3); /* delikatny cień */
-    display: inline-block;
-    animation: pulse 3s infinite ease-in-out;
-  }
-  .logo-box img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-  h1 {
-    color: #ff5ea3;
-    margin: 0;
-    font-weight: 700;
-    font-size: 2.8rem;
-    letter-spacing: 3px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-  }
-  .intro-text {
-    max-width: 700px;
-    margin: 0 auto 30px;
-    font-size: 1.1rem;
-    color: #666;
-    background: #fff0f6;
-    border-radius: 14px;
-    padding: 22px 28px;
-    border: 1.3px solid #ff5ea3;
-    box-shadow: 0 4px 12px rgba(255, 94, 163, 0.15);
-    white-space: pre-line;
-  }
-  .section-title {
-    font-weight: 700;
-    font-size: 2rem;
-    color: #ff5ea3;
-    margin-bottom: 30px;
-  }
-  .cards {
-    display: flex;
-    max-width: 900px;
-    margin: 0 auto 60px;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .card {
-    background: #fff0f6;
-    border: 2px solid #ff5ea3;
-    border-radius: 18px;
-    width: 260px;
-    padding: 25px 20px;
-    box-shadow: 0 6px 20px rgba(255, 94, 163, 0.3);
-    text-align: left;
-    font-weight: 500;
-    color: #b33a72;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
-  }
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(255, 94, 163, 0.5);
-  }
-  .card h3 {
-    margin-top: 0;
-    margin-bottom: 14px;
-    font-weight: 700;
-    color: #ff5ea3;
-    font-size: 1.4rem;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIMULATION WIKI</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #fff;
+      color: #4a4a4a;
+      text-align: center;
+    }
+    header {
+      background: #ff5ea3;
+      padding: 20px 0;
+      box-shadow: 0 4px 15px rgba(255,94,163,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    header img.logo {
+      height: 48px;
+      width: 48px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255,94,163,0.5);
+      animation: spin 12s linear infinite;
+    }
+    header h1 {
+      color: white;
+      font-weight: 700;
+      font-size: 2rem;
+      margin: 0;
+      user-select: none;
+    }
 
-  .join-button {
-    display: inline-block;
-    background: #ff5ea3;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.3rem;
-    padding: 15px 45px;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 8px 20px rgba(255, 94, 163, 0.6);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 40px;
-  }
-  .join-button:hover {
-    background: #e94c8b;
-    box-shadow: 0 12px 30px rgba(233, 76, 139, 0.8);
-  }
+    main {
+      max-width: 720px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+    /* Join Server Button */
+    .join-btn {
+      background:#ff5ea3;
+      color:#fff;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(255,94,163,0.5);
+      display: inline-block;
+      margin-bottom: 40px;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    .join-btn:hover {
+      background: #e34987;
+    }
+    /* Description */
+    .description {
+      color: #666;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      margin-bottom: 60px;
+    }
 
-  /* Administracja */
-  .admin-list {
-    max-width: 700px;
-    margin: 0 auto 60px;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .admin-list li {
-    background: #fff0f6;
-    border: 2px solid #ff5ea3;
-    border-radius: 14px;
-    padding: 15px 25px;
-    box-shadow: 0 6px 20px rgba(255, 94, 163, 0.3);
-    width: 220px;
-    color: #b33a72;
-    font-weight: 500;
-    transition: transform 0.3s ease;
-  }
-  .admin-list li:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(255, 94, 163, 0.5);
-  }
-  .admin-list li strong {
-    display: block;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #ff5ea3;
-    margin-bottom: 6px;
-  }
+    /* What you'll find */
+    h2.section-title {
+      color: #ff5ea3;
+      font-size: 1.8rem;
+      margin-bottom: 35px;
+      user-select: none;
+    }
 
-  /* Animacje */
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-</style>
+    /* Admin list */
+    .admin-list {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto 80px;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .admin-list li {
+      background: #fff0f6;
+      border: 2px solid #ff5ea3;
+      border-radius: 14px;
+      padding: 15px 20px;
+      box-shadow: 0 6px 20px rgba(255, 94, 163, 0.3);
+      width: 250px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #b33a72;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+      user-select: none;
+    }
+    .admin-list li:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(255, 94, 163, 0.5);
+    }
+    .admin-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #ff5ea3;
+      color: white;
+      font-size: 36px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(255, 94, 163, 0.4);
+    }
+    .admin-info strong {
+      display: block;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #ff5ea3;
+      margin-bottom: 4px;
+    }
+    .admin-info span {
+      font-size: 0.95rem;
+      color: #b33a72;
+    }
+
+    /* Animations */
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="simwiki.png" alt="SIMULATION WIKI logo" class="logo" />
+    <h1>SIMULATION WIKI</h1>
+  </header>
+  <main>
+    <!-- Join Server Button -->
+    <a href="https://discord.gg/nKvw8Y8HpP" target="_blank" rel="noopener noreferrer" class="join-btn">
+      Join Server
+    </a>
 
-<header>
-  <div class="logo-box">
-    <img src="simwiki.png" alt="Simulation Wiki Logo" />
-  </div>
-</header>
+    <!-- Description -->
+    <p class="description">
+      A place to explore simulation games, collaborate on wikis, and join a friendly community
+    </p>
 
-<h1>SIMULATION WIKI</h1>
+    <!-- What you'll find -->
+    <h2 class="section-title">What you'll find</h2>
 
-<div class="intro-text">
-A place to explore simulation games, collaborate on wikis, and join a friendly community
-</div>
-
-<a href="https://discord.gg/nKvw8Y8HpP" target="_blank" rel="noopener noreferrer" class="join-button">
-  Join to Server
-</a>
-
-<div class="section-title">What You'll Find</div>
-
-<div class="cards">
-  <div class="card">
-    <h3>📚 Game Wikis</h3>
-    Explore detailed guides and info on popular simulation games.
-  </div>
-  <div class="card">
-    <h3>👥 Friendly Community</h3>
-    Chat, share, and collaborate with fellow simulation fans.
-  </div>
-  <div class="card">
-    <h3>🛠️ Modding Help</h3>
-    Get support and share your mods for various simulation games.
-  </div>
-  <div class="card">
-    <h3>🎮 Events & More</h3>
-    Join events, roleplays, and game nights with other members.
-  </div>
-</div>
-
-<div class="section-title">Administration Team</div>
-<ul class="admin-list">
-  <li><strong>Alice</strong> Server Owner & Lead Admin</li>
-  <li><strong>Bob</strong> Moderator & Event Organizer</li>
-  <li><strong>Carol</strong> Wiki Manager</li>
-  <li><strong>Dave</strong> Community Support</li>
-</ul>
-
+    <!-- Admin list -->
+    <ul class="admin-list">
+      <li>
+        <div class="admin-avatar">A</div>
+        <div class="admin-info">
+          <strong>Alice</strong>
+          <span>Server Owner & Lead Admin</span>
+        </div>
+      </li>
+      <li>
+        <div class="admin-avatar">B</div>
+        <div class="admin-info">
+          <strong>Bob</strong>
+          <span>Moderator & Event Organizer</span>
+        </div>
+      </li>
+      <li>
+        <div class="admin-avatar">C</div>
+        <div class="admin-info">
+          <strong>Carol</strong>
+          <span>Wiki Manager</span>
+        </div>
+      </li>
+      <li>
+        <div class="admin-avatar">D</div>
+        <div class="admin-info">
+          <strong>Dave</strong>
+          <span>Community Support</span>
+        </div>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>
-
 
