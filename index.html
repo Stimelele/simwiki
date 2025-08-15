@@ -19,7 +19,7 @@
 
     .logo-container {
       margin-bottom: 20px;
-      animation: logoSpinPulse 6s linear infinite;
+      /* usunięta animacja */
       display: inline-block;
     }
 
@@ -71,14 +71,14 @@
       display: inline-block;
       margin-bottom: 50px;
       user-select: none;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
       opacity: 0;
       animation: fadeSlideUp 1s ease forwards;
       animation-delay: 1.5s;
     }
     .join-btn:hover {
-      animation: pulseBackground 1.5s infinite;
       background: #e34987;
+      box-shadow: 0 8px 25px rgba(227, 73, 135, 0.8);
     }
 
     h2.section-title {
@@ -132,12 +132,6 @@
     }
 
     /* Animations */
-    @keyframes logoSpinPulse {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.05); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-
     @keyframes fadeSlideDown {
       0% {
         opacity: 0;
@@ -157,17 +151,6 @@
       100% {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    @keyframes pulseBackground {
-      0%, 100% {
-        background-color: #e34987;
-        box-shadow: 0 5px 20px rgba(227, 73, 135, 0.7);
-      }
-      50% {
-        background-color: #ff5ea3;
-        box-shadow: 0 8px 25px rgba(255, 94, 163, 0.9);
       }
     }
   </style>
@@ -209,3 +192,4 @@
   </div>
 </body>
 </html>
+
