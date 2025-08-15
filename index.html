@@ -12,96 +12,55 @@
       background: #fff;
       color: #333;
       text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
-    header {
-      padding: 30px 20px 10px;
-      background: #fce4ec; /* very light pink */
+    main {
+      max-width: 720px;
+      margin: 60px auto 60px;
+      padding: 0 20px;
+    }
+    .header-container {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 20px;
-      box-shadow: 0 2px 10px rgba(255, 105, 180, 0.2);
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
     }
-    header .logo {
-      width: 70px;
-      height: 70px;
-      border-radius: 16px;
+    .logo-box {
+      width: 140px;
+      height: 140px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 0 20px #ff5ca2aa;
-      animation: pulse 3s infinite alternate ease-in-out;
+      box-shadow: 0 0 30px #ff66aa88;
+      animation: pulse 3s ease-in-out infinite alternate;
       flex-shrink: 0;
     }
-    header .logo img {
+    .logo-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-    header h1 {
+    .server-title {
+      font-size: 3rem;
       font-weight: 700;
-      font-size: 2.5rem;
-      color: #ff5ca2;
-      margin: 0;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px #ff5ca2aa;
+      color: #ff3399;
+      text-shadow: 0 0 12px #ff66aaaa;
+      user-select: none;
     }
-    main {
-      flex: 1;
+    .description {
       max-width: 720px;
-      margin: 40px auto 60px;
-      padding: 0 20px;
-    }
-    main p.description {
+      margin: 0 auto 60px;
       font-size: 1.2rem;
       line-height: 1.6;
       color: #444;
       white-space: pre-line;
-      margin-bottom: 50px;
+      text-align: left;
     }
-    section.features {
-      background: #fff0f6;
-      border: 2px solid #ff5ca2;
-      border-radius: 20px;
-      padding: 40px 30px;
-      box-shadow: 0 0 40px #ff5ca266;
-      max-width: 720px;
-      margin: 0 auto 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap: 25px;
-      color: #ff5ca2;
-    }
-    section.features .feature {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 4px 12px #ff5ca233;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease;
-    }
-    section.features .feature:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px #ff5ca377;
-    }
-    section.features .feature svg {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 12px;
-      stroke: #ff5ca2;
-      stroke-width: 1.5;
-      fill: none;
-    }
-    section.features .feature h3 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #e91e63;
-      text-shadow: 0 0 6px #ff5ca2aa;
+    /* Animations */
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px #ff66aa88; }
+      100% { box-shadow: 0 0 40px #ff3399cc; }
     }
     footer {
       text-align: center;
@@ -111,21 +70,16 @@
       border-top: 1px solid #f5f5f5;
       user-select: none;
     }
-    /* Animations */
-    @keyframes pulse {
-      0% { box-shadow: 0 0 20px #ff5ca2aa; }
-      100% { box-shadow: 0 0 40px #ff5ca2ff; }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="simwiki.png" alt="SIMULATION WIKI logo" />
-    </div>
-    <h1>SIMULATION WIKI</h1>
-  </header>
   <main>
+    <div class="header-container">
+      <div class="logo-box">
+        <img src="simwiki.png" alt="SIMULATION WIKI logo" />
+      </div>
+      <h1 class="server-title">SIMULATION WIKI</h1>
+    </div>
     <p class="description">
 Welcome to Simulator Universe!  
 Step into the ultimate hub for school-life and yandere-themed games!  
@@ -153,33 +107,8 @@ Whether you’re here to discuss gameplay, share creations, or just vibe with fe
 Keywords: yandere, yandere simulator, yandere school, sakura school simulator, saori sato, school out simulator, high school simulator, jkwatch, simulator games, anime games, game asset store, roleplay, school simulator, anime simulator, gaming community
     </p>
   </main>
-  <section class="features" aria-label="What you'll find">
-    <div class="feature" title="Chat with other fans & gamers">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      <h3>Chat with other fans & gamers</h3>
-    </div>
-    <div class="feature" title="Share fan art, mods, and game screenshots">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a7 7 0 0 0-14.8 0"/></svg>
-      <h3>Share fan art, mods, and game screenshots</h3>
-    </div>
-    <div class="feature" title="Join events, roleplays, and game nights">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
-      <h3>Join events, roleplays, and game nights</h3>
-    </div>
-    <div class="feature" title="Discover hidden tips & tricks">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10h-3"/></svg>
-      <h3>Discover hidden tips & tricks</h3>
-    </div>
-    <div class="feature" title="Cute WIKI guild tag">
-      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/></svg>
-      <h3>Cute WIKI guild tag</h3>
-    </div>
-  </section>
   <footer>
     &copy; 2025 SIMULATION WIKI. All rights reserved.
   </footer>
 </body>
 </html>
-
-
-
