@@ -14,15 +14,18 @@
       color: #4a4a4a;
       text-align: center;
       padding: 40px 20px 80px;
+      overflow-x: hidden;
     }
 
     .logo-container {
       margin-bottom: 20px;
+      animation: logoSpinPulse 6s linear infinite;
+      display: inline-block;
     }
 
     .logo-container img {
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       border-radius: 20px;
       box-shadow: 0 0 20px #ff5ea3;
       background: white;
@@ -35,6 +38,9 @@
       font-size: 2rem;
       margin: 15px 0 30px;
       user-select: none;
+      opacity: 0;
+      animation: fadeSlideDown 1s ease forwards;
+      animation-delay: 0.5s;
     }
 
     .description {
@@ -48,6 +54,9 @@
       margin: 0 auto 30px;
       user-select: none;
       box-shadow: 0 0 10px #ff5ea3aa;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 1s;
     }
 
     .join-btn {
@@ -63,8 +72,12 @@
       margin-bottom: 50px;
       user-select: none;
       transition: background 0.3s ease;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 1.5s;
     }
     .join-btn:hover {
+      animation: pulseBackground 1.5s infinite;
       background: #e34987;
     }
 
@@ -73,6 +86,9 @@
       font-size: 1.6rem;
       margin-bottom: 25px;
       user-select: none;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 2s;
     }
 
     .features {
@@ -81,6 +97,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
+      opacity: 0;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 2.5s;
     }
 
     .feature {
@@ -91,6 +110,11 @@
       text-align: left;
       user-select: none;
       background: #fff0f6;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px #ff5ea3cc;
     }
 
     .feature strong {
@@ -106,11 +130,51 @@
       font-size: 0.95rem;
       line-height: 1.4;
     }
+
+    /* Animations */
+    @keyframes logoSpinPulse {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.05); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    @keyframes fadeSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseBackground {
+      0%, 100% {
+        background-color: #e34987;
+        box-shadow: 0 5px 20px rgba(227, 73, 135, 0.7);
+      }
+      50% {
+        background-color: #ff5ea3;
+        box-shadow: 0 8px 25px rgba(255, 94, 163, 0.9);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="logo-container">
-    <img src="simwiki.png" alt="Simulation Wiki Logo" style="width: 120px; height: 120px;" />
+    <img src="simwiki.png" alt="Simulation Wiki Logo" />
   </div>
 
   <h1>SIMULATION WIKI</h1>
@@ -145,8 +209,3 @@
   </div>
 </body>
 </html>
-
-
-
-
-
