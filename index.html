@@ -1,114 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SIMULATION WIKI</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #fff;
-      color: #333;
-      text-align: center;
-    }
-    main {
-      max-width: 720px;
-      margin: 60px auto 60px;
-      padding: 0 20px;
-    }
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-    .logo-box {
-      width: 140px;
-      height: 140px;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 0 30px #ff66aa88;
-      animation: pulse 3s ease-in-out infinite alternate;
-      flex-shrink: 0;
-    }
-    .logo-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .server-title {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #ff3399;
-      text-shadow: 0 0 12px #ff66aaaa;
-      user-select: none;
-    }
-    .description {
-      max-width: 720px;
-      margin: 0 auto 60px;
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #444;
-      white-space: pre-line;
-      text-align: left;
-    }
-    /* Animations */
-    @keyframes pulse {
-      0% { box-shadow: 0 0 20px #ff66aa88; }
-      100% { box-shadow: 0 0 40px #ff3399cc; }
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
-      border-top: 1px solid #f5f5f5;
-      user-select: none;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SIMULATION WIKI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  body {
+    margin: 0; 
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    color: #333;
+    text-align: center;
+  }
+  header {
+    background: url('simwiki2.png') no-repeat center/cover;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 50px rgba(255,94,163,0.7);
+    margin-bottom: 40px;
+  }
+  .logo-box {
+    background: #ff5ea3;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(255, 94, 163, 0.6);
+    display: inline-block;
+    animation: pulse 3s infinite ease-in-out;
+  }
+  .logo-box img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  h1 {
+    color: #ff5ea3;
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .cards {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card {
+    background: #fff0f6;
+    border: 2px solid #ff5ea3;
+    border-radius: 18px;
+    width: 260px;
+    padding: 25px 20px;
+    box-shadow: 0 6px 20px rgba(255, 94, 163, 0.3);
+    text-align: left;
+    font-weight: 500;
+    color: #b33a72;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 94, 163, 0.5);
+  }
+  .card h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-weight: 700;
+    color: #ff5ea3;
+    font-size: 1.4rem;
+  }
+  .footer-desc {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    padding: 20px 25px;
+    font-size: 1.1rem;
+    color: #666;
+    background: #fff0f6;
+    border-radius: 16px;
+    border: 1.5px solid #ff5ea3;
+    box-shadow: 0 6px 15px rgba(255, 94, 163, 0.2);
+    white-space: pre-line;
+  }
+
+  /* Animacje */
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+</style>
 </head>
 <body>
-  <main>
-    <div class="header-container">
-      <div class="logo-box">
-        <img src="simwiki.png" alt="SIMULATION WIKI logo" />
-      </div>
-      <h1 class="server-title">SIMULATION WIKI</h1>
-    </div>
-    <p class="description">
-Welcome to Simulator Universe!  
-Step into the ultimate hub for school-life and yandere-themed games!  
-Our community is all about:  
-💠 Yandere Simulator  
-💠 Yandere School  
-💠 Sakura School Simulator  
-💠 Saori Sato Supervisor  
-💠 High School Simulator  
-💠 School Out Simulator  
-💠 Jkwatch  
-💠 Game Asset Store Creations  
 
-Here you can:  
-✨ Chat with other fans & gamers  
-✨ Share fan art, mods, and game screenshots  
-✨ Join events, roleplays, and game nights  
-✨ Discover hidden tips & tricks  
-✨ Cute WIKI guild tag  
+<header>
+  <div class="logo-box">
+    <img src="simwiki.png" alt="Simulation Wiki Logo" />
+  </div>
+</header>
 
-Whether you’re here to discuss gameplay, share creations, or just vibe with fellow fans, this is your place!  
+<h1>SIMULATION WIKI</h1>
 
-🔗 Join us and let’s bring these worlds to life together!  
+<div class="cards">
+  <div class="card">
+    <h3>📚 Game Wikis</h3>
+    Explore detailed guides and info on popular simulation games.
+  </div>
+  <div class="card">
+    <h3>👥 Friendly Community</h3>
+    Chat, share, and collaborate with fellow simulation fans.
+  </div>
+  <div class="card">
+    <h3>🛠️ Modding Help</h3>
+    Get support and share your mods for various simulation games.
+  </div>
+  <div class="card">
+    <h3>🎮 Events & More</h3>
+    Join events, roleplays, and game nights with other members.
+  </div>
+</div>
 
-Keywords: yandere, yandere simulator, yandere school, sakura school simulator, saori sato, school out simulator, high school simulator, jkwatch, simulator games, anime games, game asset store, roleplay, school simulator, anime simulator, gaming community
-    </p>
-  </main>
-  <footer>
-    &copy; 2025 SIMULATION WIKI. All rights reserved.
-  </footer>
+<div class="footer-desc">
+A place to explore simulation games, collaborate on wikis, and join a friendly community
+</div>
+
 </body>
 </html>
+
+
