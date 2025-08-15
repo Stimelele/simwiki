@@ -6,135 +6,111 @@
   <title>SIMULATION WIKI</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background: #fff;
-      color: #444;
+      color: #4a4a4a;
       text-align: center;
-      padding: 40px 20px;
+      padding: 40px 20px 80px;
     }
 
-    /* Logo */
     .logo-container {
-      background: #ffe7f3;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px #ff5ea3aa;
-      display: inline-block;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
+
     .logo-container img {
       width: 80px;
       height: 80px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px #ff5ea3cc;
-      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ff5ea3;
+      background: white;
+      display: inline-block;
     }
 
     h1 {
       color: #ff5ea3;
       font-weight: 700;
-      font-size: 2.3rem;
-      margin-bottom: 25px;
+      font-size: 2rem;
+      margin: 15px 0 30px;
       user-select: none;
-      letter-spacing: 1.5px;
     }
 
-    /* Description */
     .description {
-      display: inline-block;
-      background: #fff0f6;
-      border: 1.5px solid #ff5ea3;
+      border: 1px solid #ff5ea3;
       border-radius: 12px;
-      padding: 15px 25px;
-      max-width: 600px;
+      padding: 15px 20px;
       color: #555;
-      font-size: 1.1rem;
-      margin-bottom: 40px;
+      font-size: 1.15rem;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto 30px;
       user-select: none;
+      box-shadow: 0 0 10px #ff5ea3aa;
     }
 
-    /* Join Button */
     .join-btn {
-      background: #ff5ea3;
-      color: white;
+      background:#ff5ea3;
+      color:#fff;
       padding: 15px 40px;
       border-radius: 30px;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       text-decoration: none;
-      box-shadow: 0 8px 25px #ff5ea3cc;
+      box-shadow: 0 5px 20px rgba(255,94,163,0.5);
       display: inline-block;
-      margin-bottom: 45px;
-      transition: background 0.3s ease;
+      margin-bottom: 50px;
       user-select: none;
+      transition: background 0.3s ease;
     }
     .join-btn:hover {
       background: #e34987;
     }
 
-    /* Section title */
     h2.section-title {
       color: #ff5ea3;
-      font-weight: 700;
       font-size: 1.6rem;
       margin-bottom: 25px;
       user-select: none;
     }
 
-    /* Cards container */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    .features {
       max-width: 700px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
 
-    /* Individual cards */
-    .card {
-      background: #fff0f6;
+    .feature {
       border: 1.5px solid #ff5ea3;
-      border-radius: 15px;
-      padding: 20px 25px;
-      box-shadow: 0 6px 25px #ff5ea380;
+      border-radius: 12px;
+      padding: 15px 20px;
+      box-shadow: 0 0 15px #ff5ea3aa;
       text-align: left;
       user-select: none;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .card:hover {
-      box-shadow: 0 10px 40px #ff5ea3cc;
-      transform: translateY(-6px);
+      background: #fff0f6;
     }
 
-    /* Card title */
-    .card h3 {
+    .feature strong {
+      display: block;
+      font-weight: 700;
       color: #ff5ea3;
-      font-size: 1.15rem;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    /* Emoji icon in title */
-    .card h3 span.icon {
-      font-size: 1.3rem;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
     }
 
-    /* Card description */
-    .card p {
-      color: #7a4960;
+    .feature span {
+      color: #7a3a72;
       font-size: 0.95rem;
       line-height: 1.4;
-      margin: 0;
     }
   </style>
 </head>
 <body>
-
   <div class="logo-container">
-    <img src="simwiki.png" alt="Simulation Wiki Logo" />
+    <img src="/mnt/data/7f1e2a08-0c8c-4797-996f-29b1432d1ba8.png" alt="Simulation Wiki Logo" />
   </div>
 
   <h1>SIMULATION WIKI</h1>
@@ -149,26 +125,26 @@
 
   <h2 class="section-title">What You'll Find</h2>
 
-  <div class="cards">
-    <div class="card">
-      <h3><span class="icon">📚</span> Game Wikis</h3>
-      <p>Explore detailed guides and info on popular simulation games.</p>
+  <div class="features">
+    <div class="feature">
+      <strong>📚 Game Wikis</strong>
+      <span>Explore detailed guides and info on popular simulation games.</span>
     </div>
-    <div class="card">
-      <h3><span class="icon">👥</span> Friendly Community</h3>
-      <p>Chat, share, and collaborate with fellow simulation fans.</p>
+    <div class="feature">
+      <strong>👥 Friendly Community</strong>
+      <span>Chat, share, and collaborate with fellow simulation fans.</span>
     </div>
-    <div class="card">
-      <h3><span class="icon">🛠️</span> Modding Help</h3>
-      <p>Get support and share your mods for various simulation games.</p>
+    <div class="feature">
+      <strong>🛠️ Modding Help</strong>
+      <span>Get support and share your mods for various simulation games.</span>
     </div>
-    <div class="card">
-      <h3><span class="icon">🎮</span> Events & More</h3>
-      <p>Join events, roleplays, and game nights with other members.</p>
+    <div class="feature">
+      <strong>🎮 Events & More</strong>
+      <span>Join events, roleplays, and game nights with other members.</span>
     </div>
   </div>
-
 </body>
 </html>
+
 
 
